@@ -244,7 +244,7 @@ RECALIBRATION:
 
 *This will deploy the non-GPU accelerated rules to slurm and deploy the GPU accelerated rules locally (pbrun_fq2bam, pbrun_haplotypecaller_single, pbrun_haplotypecaller_cohort). Therefore, if running the pipeline gpu accelerated, the pipeline should be deployed from the machine with the GPU's.*
 
-In theory, this cluster configuration should be adaptable to other job scheduler systems. In fact, snakemake is designed to allow pipelines/workflows such as this to be portable to different job schedulers by having any [any cluster specific configured outside of the workflow/pipeline](https://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html#cluster-configuration-deprecated). but here I will provide a minimal example for deploying this pipeline to [slurm](https://slurm.schedmd.com/).
+In theory, this cluster configuration should be adaptable to other job scheduler systems. In fact, snakemake is designed to allow pipelines/workflows such as this to be portable to different job schedulers by having [any cluster specific settings configured outside of the workflow/pipeline](https://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html#cluster-configuration-deprecated). But here I will provide a minimal example for deploying this pipeline to [slurm](https://slurm.schedmd.com/).
 
 Configure `account:` and `partition:` in the default section of 'cluster.json' in order to set the parameters for slurm sbatch (see documentation [here](https://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html#cluster-configuration-deprecated) and [here](https://slurm.schedmd.com/)). For example:
 
