@@ -34,7 +34,7 @@ See [here](https://help.github.com/en/github/getting-started-with-github/fork-a-
 
 Clone the forked [human_genomics_pipeline](https://github.com/ESR-NZ/human_genomics_pipeline) repo into the same directory as your paired end fastq data to be processed.
 
-See [here](https://help.github.com/en/github/getting-started-with-github/fork-a-repo#keep-your-fork-synced) for help cloning a repository
+See [here](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository) for help cloning a repository
 
 ## 3. Setup files and directories
 
@@ -93,14 +93,14 @@ If you're analysing cohort's of samples, you will need an additional directory w
 
 Requirements:
 
-- Input paired end fastq files need to identified with `_1` and `_2` (not `_R1` and `_R2`)
+- Input paired end fastq files need to be identified with `_1` and `_2` (not `_R1` and `_R2`)
 - Currently, the filenames of the pedigree files need to be labelled with the name of the proband/individual affected with the disease phenotype in the cohort (we will be working towards removing this requirement)
 - Singletons and cohorts need to be run in separate pipeline runs
 - It is assumed that there is one proband/individual affected with the disease phenotype of interest in a given cohort (one individual with a value of 2 in the 6th column of a given pedigree file)
 
 ### Test data
 
-The provided [test dataset](./test) can be used. Setup the test dataset before running the pipeline on this data - choose to setup to run either a single sample analysis or a cohort analysis with the `-a` flag. For example:
+The provided [test dataset](./test) can be used. Set up the test dataset before running the pipeline on this data - choose to set up to run either a single sample analysis or a cohort analysis with the `-a` flag. For example:
 
 ```bash
 cd ./human_genomics_pipeline
@@ -123,7 +123,7 @@ Most of this software is commonly pre-installed on HPC's, likely available as mo
 
 ## 5. Create a local copy of the [GATK resource bundle](https://gatk.broadinstitute.org/hc/en-us/articles/360035890811-Resource-bundle) (either b37 or hg38)
 
-### b37
+### b37 [size: 54 GB]
 
 Download from [Google Cloud Bucket](https://console.cloud.google.com/storage/browser/gatk-legacy-bundles/b37?prefix=)
 
@@ -131,7 +131,7 @@ Download from [Google Cloud Bucket](https://console.cloud.google.com/storage/bro
 gsutil cp -r gs://gatk-legacy-bundles/b37 /where/to/download/
 ```
 
-### hg38
+### hg38 [size: 33 GB]
 
 Download from [Google Cloud Bucket](https://console.cloud.google.com/storage/browser/genomics-public-data/resources/broad/hg38/v0)
 
@@ -157,7 +157,7 @@ Specify whether the pipeline should be GPU accelerated where possible (either 'Y
 GPU_ACCELERATED: "No"
 ```
 
-Set the the working directories to the reference human genome file (b37 or hg38). For example:
+Set the working directory to the reference human genome file (b37 or hg38). For example:
 
 ```yaml
 REFGENOME: "/scratch/publicData/b37/human_g1k_v37_decoy.fasta"
